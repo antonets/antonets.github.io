@@ -1,0 +1,180 @@
+@import "vars";
+
+@media (max-width: 1024px) {
+	.header {
+		&__banner {
+			h1 {
+				font-size: 50px;
+			}
+		}
+		&__promo {
+			> .flex {
+				flex-flow: column;
+			}
+			&-left {
+				width: 100%;
+			}
+		}
+		&__order {
+			width: 100%;
+		}
+	}
+}
+@media (max-width: 767px) {
+	h2 {
+		font-size: 20px;
+		line-height: 1.1;
+	}
+	.button,button {
+		font-size: 16px;
+	}
+	.header:not(.thanks) {
+		background: url('../img/banner.jpg') center -30vh /cover;
+	}
+	.header {
+		padding: 0;
+		
+		&__top {
+			padding: 10px 15px 0;
+			&-logo {
+				width: 90px;
+				left: -8px;
+			}
+		}
+		&__banner {
+			height: calc(100vh - 60px);
+			h1 {
+				font-size: 25px;
+			}
+			&-price {
+				span {
+					padding-top: 20px;
+					font-size: 18px;
+				}
+				span:first-child {
+					width: 45%;
+				}
+				span:last-child {
+					width: 55%;
+					padding-top: 15px;
+					font-size: 22px;
+				}
+			}
+		}
+		&__contacts {
+			a {
+				top: -2px;
+				display: block;
+				font-size: 10px;
+			}
+			.inst {
+				
+				width: 15px;
+				height: 15px;
+				top: 4px;
+			}
+		}
+
+		&__promo {
+			padding-bottom: 0;
+			li {
+				font-size: 13px;
+				&::before {
+					width: 7px;
+					height: 7px;
+					margin-right: 8px;
+					top: -1px;
+				}
+			}
+			&-left {
+				padding: 40px 20px 20px;
+				background: #1a1a1a;
+				font-size: 13px;
+			}
+			
+			&-delivery {
+				h2 {
+					margin-bottom: 30px;
+					color: rgb(183, 28, 22);
+				}
+			}
+		}
+		&__benefits {
+			margin-bottom: 30px;
+			li {
+				margin-bottom: 15px;
+				&::before {
+					margin-right: 5px;
+				}
+			}
+		}
+		&__order {
+			background: #fafafa;
+			padding: 30px 20px;
+			.today {
+				font-size: 20px;
+				margin-bottom: 20px;
+				line-height: 1.2;
+				max-width: 280px;
+				margin-left:auto;
+				margin-right:auto;
+			}
+			p {
+				font-size: 16px;
+				margin-bottom: 4px;
+			}
+			form {
+				padding-top: 20px;
+			}
+		}
+	}
+	.items {
+		.flex {
+			flex-flow: column;
+		}
+		&1 {
+			margin-bottom: 40px;
+		}
+		&-carousel.owl-carousel {
+			width: 100%;
+		}
+	}
+	.pants {
+		&__wrapper {
+			padding-bottom: 57%;
+		}
+		&__image {
+			width: 800%;
+			animation: pants 50s linear infinite;
+		}
+	}
+	.suits {
+		&__wrapper {
+			padding-bottom: 59%;
+		}
+	}
+	.reviews {
+		&__list {
+			padding: 20px 40px;
+		}
+	}
+	.order {
+		padding: 60px 0;
+		h2 {
+			margin-bottom: 30px;
+		}
+		&__form {
+			padding: 30px 20px;
+		}
+	}
+}
+@media (max-width: 340px) {
+	.header {
+		&__banner {
+			h1 {
+				font-size: 20px;
+			}
+		}
+		
+	}
+}
