@@ -16,6 +16,7 @@ $(function() {
 		$('.clothes .container').css({
 			"height": height
 		})
+		dataLayer.push({'event': 'event-to-ga', 'eventCategory' : 'Jobs', 'eventAction' : 'clicked'});
 	})
 
 	$('.back-to-category').click(function() {
@@ -124,8 +125,8 @@ $(function() {
 		dots: true,
 		nav: false,
 		items: 1,
-		responsiveClass:true,
-		autoplayHoverPause: true
+		responsiveClass:true
+		// autoplayHoverPause: true
 	})
  	function formSubmit(form) {
 			var $form = form,
@@ -136,8 +137,7 @@ $(function() {
 			    dataType: "json",
 			    data: $form.serialize(),
 			    success: function(response) {
-			    	console.log('form submitted');
- 					// window.location.href = 'https://kvadrat.store/thanks.html';
+					$('.')
 			    }
 			})	
  	}

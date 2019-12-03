@@ -415,7 +415,7 @@ section {
 		position: relative;
 		overflow: hidden;
 		cursor: pointer;
-		height: 300px;
+		height: 400px;
 		border-right: 1.5px solid #181818;
 		border-left: 1.5px solid #181818;
 		&:hover {
@@ -579,11 +579,17 @@ section {
 			&:nth-child(1) .img{
 				background-position: center 20%;
 			}
-			&:nth-child(3) .img,&:nth-child(4) .img, &:nth-child(6) .img {
+			&:nth-child(3) .img{
+				background-position: center 20%;
+			}
+			&:nth-child(4) .img {
 				background-position: center bottom;
 			}
 			&:nth-child(5) .img{
 				background-position: center top;
+			}
+			&:nth-child(6) .img {
+				background-size: auto 100%;
 			}
 		}
 	}
