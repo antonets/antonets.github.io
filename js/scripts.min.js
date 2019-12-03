@@ -16,7 +16,11 @@ $(function() {
 		$('.clothes .container').css({
 			"height": height
 		})
-		dataLayer.push({'event': 'event-to-ga', 'eventCategory' : 'Jobs', 'eventAction' : 'clicked'});
+		gtag('event', 'click', {
+		  'event_category' : 'fdsfs',
+		  'event_label' : 'fsfs'
+		});
+		// dataLayer.push({'event': 'event-to-ga', 'eventCategory' : 'Jobs', 'eventAction' : 'clicked'});
 	})
 
 	$('.back-to-category').click(function() {
