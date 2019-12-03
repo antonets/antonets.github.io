@@ -1,0 +1,7 @@
+@import "_mixins/font-face";
+
+@include font-face("montserrat", "../fonts/Montserrat-Regular");
+@include font-face("montserrat", "../fonts/Montserrat-Bold", 700);
+@include font-face("montserrat", "../fonts/Montserrat-SemiBold", 600);
+@include font-face("montserrat", "../fonts/Montserrat-Light", 300);
+@include font-face("gotham", "../fonts/GothamPro-Black");
