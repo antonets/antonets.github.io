@@ -168,7 +168,7 @@ $(function() {
 					$('.order__form button').addClass('sent');
 					setTimeout(function() {
 						$('.order__form button').removeClass('sent');
-					}, 4000)
+					}, 8000)
 			    }
 			})	
  	}
