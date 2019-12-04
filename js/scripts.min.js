@@ -138,11 +138,6 @@ $(function() {
 	    delimeters: [' ', ' ', '-', '-'],
 	   
 	});
-	// var cleave = new Cleave('.tel-input1', {
-	//     blocks: [3, 3, 3, 2, 2],
-	//     prefix: '+38',
-	//     delimeters: [' ', ' ', '-', '-']
-	// });
 	$('.items__info .button').click(function () {
 		$('.form-item').val($(this).attr('data-item'));
 		$('body,html').animate({
@@ -160,7 +155,6 @@ $(function() {
 		nav: false,
 		items: 1,
 		responsiveClass:true
-		// autoplayHoverPause: true
 	})
  	function formSubmit(form) {
 			var $form = form,
@@ -171,7 +165,10 @@ $(function() {
 			    dataType: "json",
 			    data: $form.serialize(),
 			    success: function(response) {
-					$('.')
+					$('.order__form button').addClass('sent');
+					setTimeout(function() {
+						$('.order__form button').removeClass('sent');
+					}, 4000)
 			    }
 			})	
  	}
