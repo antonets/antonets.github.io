@@ -8,6 +8,7 @@ $(function() {
 	})
 	var height
 	$('.clothes__categories li').click(function() {
+		var category = $(this).attr('data-category');
 		height = $('.categories > li').eq($(this).index()).css('height');
 		console.log(height);
 		$('.categories > li').eq($(this).index()).addClass('active').siblings().removeClass('active');
@@ -17,8 +18,8 @@ $(function() {
 			"height": height
 		})
 		gtag('event', 'click', {
-		  'event_category' : 'fdsfs',
-		  'event_label' : 'fsfs'
+		  'event_category' : 'Категория товара',
+		  'event_label' : category
 		});
 		// dataLayer.push({'event': 'event-to-ga', 'eventCategory' : 'Jobs', 'eventAction' : 'clicked'});
 	})
