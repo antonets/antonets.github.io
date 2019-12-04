@@ -166,10 +166,14 @@ body {
 				color: #fff;
 				h2 {
 					color: #fff;
+					color: rgba(179,0,0,1);
 				}
 				p {
 					margin-bottom: 30px;
 					font-size: 20px;
+					span {
+						color: rgba(179,0,0,1);
+					}
 				}
 				
 			}
@@ -301,10 +305,11 @@ body {
 			
 		}
 		.today {
-			text-align: left;
+			text-align: сenter;
 			font-size: 26px;
 			margin-bottom: 40px;
 			text-transform: uppercase;
+
 		}
 		.data {
 			font-size: 18px;
@@ -526,20 +531,7 @@ section {
 		}
 	}
 }
-.items, .items__list {
-	position: relative;
-	> li {
-		position: absolute;
-		width: 100%;
-		top: 0;
-		left: 0;
-		visibility: hidden;
-		&.active {
-			position: relative;
-			visibility: visible;
-		}
-	}
-}
+
 .clothes {
 	padding-top: 50px;
 	padding-bottom: 100px;
@@ -550,7 +542,6 @@ section {
 		flex-flow: row wrap;
 		@for $i from 1 through 6 {
 		  li:nth-child(#{$i}) .img {
-
 		    background: url('../img/category#{$i}.jpg') center center/cover;
 		  }
 		}
@@ -615,32 +606,96 @@ section {
 		}
 	}
 }
+.items, .items__list {
+	position: relative;
+	> li {
+		position: absolute;
+		width: 100%;
+		top: 0;
+		left: 0;
+		visibility: hidden;
+		&.active {
+			position: relative;
+			visibility: visible;
+		}
+	}
+}
 .items__list {
 	.flex {
 		display: flex;
-		justify-content: center;
+		justify-content: space-around;
 		align-items: center;
 	}
-	.img, .item__info {
+	.img-wrap, .item__info {
 		width: 50%;
 	}
 	.img {
 		width: 400px;
 		height: 400px;
-		margin-right: 50px;
+	}
+	.img-wrap {
+		width: 400px;
+		// margin-right: 50px;
+		.owl-stage-outer {
+			overflow: hidden;
+			// width: 400px;
+			// height: 400px;
+		}
+		.owl-stage {
+			
+			display: flex;
+		}
+		.owl-nav {
+			display: none;
+		}
+		.owl-dots {
+			margin-top: 15px;
+			text-align: center;
+			button {
+				-webkit-appearance: none;
+				display: inline-block;
+				width: 14px;
+				height: 14px;
+				background: #fff;
+				margin: 0 5px;
+				border-radius: 50%;
+				transition: .2s;
+				border: none;
+				&.active {
+					background: rgba(179,0,0,.85);
+					transition: .2s;
+				}
+				&:focus {
+					outline: none;
+				}
+			}
+		}
+		li {
+			display: block;
+			width: 400px;
+			height: 400px;
+		}
 	}
 
 }
 .items {
 	> li {
-		&:nth-child(1) {
-			@for $i from 1 through 3 {
-			  li:nth-child(#{$i}) .img {
+		// &:nth-child(1) {
+		// 	@for $i from 1 through 3 {
+		// 		.items__list > li:nth-child(#{$i}) {
+		// 			@for $j from 1 through 4 {
+		// 				.img-wrap li:nth-child(#{$j}) {
+		// 					background: url('../img/jackets/#{$i}/#{$j}.jpg') center center/cover;
+		// 				}
+		// 			}
+		// 		}
 
-			    background: url('../img/jackets/#{$i}.jpg') center center/cover;
-			  }
-			}
-		}
+		// 	  // li:nth-child(#{$i}) .img {
+
+		// 	  //   background: url('../img/jackets/#{$i}/#{$j}.jpg') center center/cover;
+		// 	  // }
+		// 	}
+		// }
 		&:nth-child(2) {
 			@for $i from 1 through 3 {
 			  li:nth-child(#{$i}) .img {
@@ -683,9 +738,13 @@ section {
 		}
 	}
 	&__list {
-		
+
+		.categories__nav {
+			margin-bottom: 40px;
+		}
 	}
 	&__info {
+		width: 50%;
 		color: #fff;
 		h3 {
 			margin-bottom: 10px;

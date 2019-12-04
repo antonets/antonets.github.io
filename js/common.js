@@ -6,7 +6,7 @@ $(function() {
 			scrollTop: $(src).offset().top
 		},500)
 	})
-	var height
+	var height;
 	$('.clothes__categories li').click(function() {
 		var category = $(this).attr('data-category');
 		height = $('.categories > li').eq($(this).index()).css('height');
@@ -56,7 +56,35 @@ $(function() {
 			"height": height
 		})
 	});
+	var cats = ["jackets", "shoes", "fleese", "pants", "hats", "suits"]
+	for (var i = 0; i < $('.items > li').length; i++) {
 
+		var a = $($('.items > li')[i]).find('.items__list > li');
+
+		for (var k = 0; k < a.length; k++) {
+			var b = $(a[k]).find('.img-wrap li');
+			
+			for (var j = 0; j < b.length; j++) {
+				var itemIndex = k + 1;
+				var imageIndex = j + 1;
+				var bg = "url('img/" + cats[i] + "/" + itemIndex + "/" + imageIndex + ".jpg') center center/cover";
+				console.log(bg);
+				$($(b[j])[0]).css({
+					"background": bg
+				})
+				// $(b[j]).css({"background": "url(../img/" + cats[i] + "/" + k + "/" + j + ".jpg') center center/cover;"})
+			}
+		}
+		
+	}
+	$('.img-wrap').owlCarousel({
+	    loop:true,
+	    // autoplay: true,
+	    dots: true,
+	    center: true,
+	    items: 1,
+	    autoplayHoverPause: true
+	});
 
 	$('.items1, .items2').owlCarousel({
 	    loop:true,
@@ -97,6 +125,7 @@ $(function() {
 	    	}
 	    }
 	});
+
 	$( ".tel-input, .tel-input1").keypress(function(evt) {
 	  var charCode = (evt.which) ? evt.which : event.keyCode
 	      if (charCode > 31 && (charCode < 48 || charCode > 57))
