@@ -585,6 +585,7 @@ section {
 		}
 	}
 	.container {
+		overflow: hidden;
 		position: relative;
 		transition: .5s ease;
 		> ul {
